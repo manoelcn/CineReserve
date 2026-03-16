@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from authentication.models import User
 from movies.models import Session
@@ -24,3 +25,13 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f"{self.seat.seat_number} - {self.user.username}"
+
+
+class Ticket(models.Model):
+    reservation = models.ForeignKey(Reservation, on_delete=models.CASCADE, related_name='ticket')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tickets')
+    code = models.UUIDField(default=uuid.uuid4, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.code)
