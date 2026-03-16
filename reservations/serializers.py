@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from reservations.models import Seat, Reservation
+from reservations.models import Seat, Reservation, Ticket
 
 
 class SeatSerializer(serializers.ModelSerializer):
@@ -18,3 +18,11 @@ class ReservationSerializer(serializers.ModelSerializer):
             'reserved_until': {'read_only': True},
             'user': {'read_only': True},
         }
+
+
+class TicketSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Ticket
+        fields = ('id', 'code', 'created_at', 'user',)
+        read_only_fields = ('id', 'code', 'created_at', 'user',)
