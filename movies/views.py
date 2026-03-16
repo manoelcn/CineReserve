@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import AllowAny
 from movies.serializers import MovieSerializer, SessionSerializer
@@ -16,5 +17,6 @@ class SessionListView(ListAPIView):
 
     def get_queryset(self):
         movie_id = self.kwargs.get('movie_id')
-        self.queryset = Session.objects.filter(movie_id=movie_id)
-        return self.queryset
+        movie = get_object_or_404(Movie, id=movie_id)
+        session = Session.objects.filter(movie=movie)
+        return session
