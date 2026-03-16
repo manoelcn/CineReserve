@@ -10,7 +10,7 @@ class Movie(models.Model):
 
 
 class Session(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='session_movie')
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='sessions')
     room = models.CharField(max_length=100)
     session_datetime = models.DateTimeField()
     total_seats = models.IntegerField()
