@@ -49,6 +49,8 @@ class CheckoutView(APIView):
 
     def post(self, request, reservation_id):
         reservation = get_object_or_404(Reservation, id=reservation_id)
+        if reservation.user != request.user:
+            raise ValidationError('You are not allowed to checkout this reservation')
         if reservation.is_active != True or reservation.reserved_until < timezone.now():
             raise ValidationError('Reservation is expired or inactive')
         seat = reservation.seat
