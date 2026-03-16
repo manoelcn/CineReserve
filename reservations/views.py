@@ -59,3 +59,12 @@ class CheckoutView(APIView):
         ticket = Ticket.objects.create(user=request.user, reservation=reservation)
         serializer = TicketSerializer(ticket)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class TicketListView(ListAPIView):
+    serializer_class = TicketSerializer
+    permission_classes = (IsAuthenticated,)
+
+    def get_queryset(self):
+        tickets = Ticket.objects.filter(user=self.request.user)
+        return tickets
