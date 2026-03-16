@@ -15,5 +15,6 @@ class ReservationSerializer(serializers.ModelSerializer):
         model = Reservation
         fields = '__all__'
         extra_kwargs = {
-            'reserved_until': {'read_only': True}
+            'reserved_until': {'read_only': True},
+            'user': {'read_only': True},
         }
