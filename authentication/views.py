@@ -5,5 +5,5 @@ from authentication.serializers import UserSerializer
 
 
 class RegisterView(CreateAPIView):
-    permission_classes = (AllowAny)
-    serializer_class = (UserSerializer,)
+    permission_classes = (AllowAny,)
+    serializer_class = UserSerializer
