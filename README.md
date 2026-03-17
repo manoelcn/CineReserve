@@ -82,6 +82,7 @@ A documentação interativa completa está disponível em `/api/docs/` (Swagger 
 | Método | Endpoint | Descrição | Auth |
 |--------|----------|-----------|------|
 | `GET` | `/sessions/{session_id}/seats/` | Lista assentos de uma sessão | ❌ |
+| `GET` | `/reservations/` | Lista reservas do usuário autenticado | ✅ |
 | `POST` | `/reservations/` | Cria uma reserva de assento | ✅ |
 | `POST` | `/reservations/{reservation_id}/checkout/` | Confirma a reserva e gera o ticket | ✅ |
 | `GET` | `/tickets/` | Lista tickets do usuário autenticado | ✅ |
