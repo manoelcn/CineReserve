@@ -22,18 +22,18 @@ O **CineReserve** é uma aplicação backend que gerencia o fluxo completo de re
 
 ## 🛠️ Tecnologias
 
-| Tecnologia |  | Descrição |
-|---|---|---|
-| Python | | Linguagem principal |
-| Django | | Framework web |
-| Django REST Framework | | Construção da API REST |
-| PostgreSQL | | Banco de dados relacional |
-| psycopg2-binary | | Driver PostgreSQL para Python |
-| SimpleJWT | | Autenticação via JWT |
-| drf-spectacular | | Geração automática de documentação OpenAPI |
-| python-decouple | | Gerenciamento de variáveis de ambiente |
-| Poetry | | Gerenciamento de dependências |
-| Docker / Docker Compose | | Containerização |
+| Tecnologia | Descrição |
+|---|---|
+| Python | Linguagem principal |
+| Django | Framework web |
+| Django REST Framework | Construção da API REST |
+| PostgreSQL | Banco de dados relacional |
+| psycopg2-binary | Driver PostgreSQL para Python |
+| SimpleJWT | Autenticação via JWT |
+| drf-spectacular | Geração automática de documentação |
+| python-decouple | Gerenciamento de variáveis de ambiente |
+| Poetry | Gerenciamento de dependências |
+| Docker / Docker Compose | Containerização |
 
 ---
 
@@ -118,7 +118,7 @@ python -c "from django.core.management.utils import get_random_secret_key; print
 
 ### Pré-requisitos
 
-- [Docker](https://www.docker.com/) e [Docker Compose](https://docs.docker.com/compose/) instalados
+- Docker e Docker Compose instalados
 
 ### Passo a passo
 
