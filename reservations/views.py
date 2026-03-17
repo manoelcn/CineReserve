@@ -2,7 +2,7 @@ from django.utils import timezone
 from datetime import timedelta
 from django.shortcuts import get_object_or_404
 from rest_framework.exceptions import ValidationError
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, ListCreateAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -23,9 +23,13 @@ class SeatListView(ListAPIView):
         return seats
 
 
-class ReservationCreateView(CreateAPIView):
+class ReservationListCreateView(ListCreateAPIView):
     serializer_class = ReservationSerializer
     permission_classes = (IsAuthenticated,)
+
+    def get_queryset(self):
+        reservations = Reservation.objects.filter(user=self.request.user)
+        return reservations
 
     def perform_create(self, serializer):
         seat = serializer.validated_data.get('seat')
