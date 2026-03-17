@@ -7,7 +7,6 @@ API REST para reserva de assentos em sessões de cinema, desenvolvida com Django
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Tecnologias](#-tecnologias)
 - [Arquitetura](#-arquitetura)
-- [Modelo de Dados](#-modelo-de-dados)
 - [Endpoints da API](#-endpoints-da-api)
 - [Variáveis de Ambiente](#-variáveis-de-ambiente)
 - [Como Executar](#-como-executar)
